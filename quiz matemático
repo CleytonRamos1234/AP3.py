@@ -1,0 +1,129 @@
+while True:
+
+    jogo_do_quiz = input("Quer começar? (S/N) : ").upper()
+
+    if jogo_do_quiz == "S":
+
+        print('Então prepare-se')
+        break
+    elif jogo_do_quiz == "N":
+        print('Fim do Game...')
+        exit()
+        break
+    else:
+
+        print('Opçao errada, tente novamente...')
+print()
+print('-=-' * 25)
+print()
+print('O jogo vai começar!!!!')
+perguntas = {
+    'Pergunta 1': {
+
+        'pergunta': 'Mário pretende realizar uma viagem utilizando um veículo cujo consumo médio de combustível é de 10 Km/L. Sabendo que percorrerá 300 000 m, é correto afirmar que o volume de combustível a ser consumido será de:',
+
+        'respostas': {'a': '10 litro', 'b':'12 litros', 'c': '30 litros', },
+
+        'resposta_certa': 'c',
+    },
+    'Pergunta 2': {
+
+        'pergunta': 'Considere um triângulo retângulo tal que o cosseno de um de seus ângulos agudos é igual a 0,8. Sabendo-se que a hipotenusa desse retângulo é igual a 4, o valor da tangente deste mesmo ângulo é:',
+
+        'respostas': {'a': '0,75', 'b': '1', 'c': '0,5', },
+
+        'resposta_certa': 'a',
+    },
+    'Pergunta 3': {
+
+        'pergunta': 'Carla tem 2 reais a mais que Paula, Paula tem dois reais a mais que Leia e Leia tem dois reais a mais que Vivian. As 4 juntas possuem 48 reais. Quanto cada uma tem individualmente?',
+
+        'respostas': {'a': 'Carla tem 14, Paula tem 12, Leila tem 10 e Vivian tem 8.', 'b': 'Vivian tem 9, Leila tem 11, Paula tem 13 e Carla tem 15.', 'c': 'Carla tem 10, Paula tem 12, Leila tem 14 e Vivian tem 16.', },
+
+        'resposta_certa': 'b',
+    },
+    'Pergunta 4': {
+
+        'pergunta': 'Três pessoas A, B e C vão participar de um concurso num programa de televisão. O apresentador faz um sorteio entre A e B e, em seguida, faz um sorteio, para decidir quem iniciará o concurso. Se em cada sorteio as duas pessoas têm a mesma “chance” de ganhar, qual é a probabilidade de A iniciar o concurso?',
+
+        'respostas': {'a': '50%', 'b': '25%', 'c': '95%', },
+
+        'resposta_certa': 'b',
+    },
+    'Pergunta 5': {
+
+        'pergunta': 'O ponto P (3, m) é interno a um dos lados do triângulo A (1,2), B (3,1) e C (5,-4). Então:',
+
+        'respostas': {'a': 'm = -1.', 'b': 'm = ½.', 'c': ' m = 1.', },
+
+        'resposta_certa': 'a',
+    },
+    'Pergunta 6': {
+
+        'pergunta': 'Uma empresa tem 750 empregados e comprou marmitas individuais congeladas suficientes para o almoço deles durante 25 dias. Se essa empresa tivesse mais 500 empregados, a quantidade de marmitas adquiridas seria suficiente para quantos dias?',
+
+        'respostas': {'a': '20', 'b': '17', 'c': '15', },
+
+        'resposta_certa': 'c',
+    },
+    'Pergunta 7': {
+
+        'pergunta': 'O valor de (0,2)³ + (0,16)² é:',
+
+        'respostas': {'a': '0,0264.', 'b': '0,0336.', 'c': '0,6256.', },
+
+        'resposta_certa': 'b',
+    },
+    'Pergunta 8': {
+
+        'pergunta': 'O piso de uma sala retangular, medindo 3,52 m × 4,16 m, será revestido com ladrilhos quadrados, de mesma dimensão, inteiros, de forma que não fique espaço vazio entre ladrilhos vizinhos. Os ladrilhos serão escolhido de modo que tenham a maior dimensão possível. Na situação apresentada, o lado do ladrilho deverá medir:',
+
+        'respostas': {'a': 'mais de 30cm.', 'b': 'menos de 30cm.', 'c': 'mais de 20cm e menos de 25cm.', },
+
+
+        'resposta_certa': 'a',
+    },
+    'Pergunta 9': {
+
+        'pergunta': 'Duas empreiteiras farão conjuntamente a pavimentação de uma estrada, cada uma trabalhando a partir de uma das extremidades. Se uma delas pavimentar 2/5 da estrada e a outra os 81 km restantes, a extensão dessa estrada é de:',
+
+        'respostas': {'a': '125km.', 'b': '142km.', 'c': '135km.', },
+
+        'resposta_certa': 'c',
+    },
+    'Pergunta 10': {
+
+        'pergunta': 'Um corretor de redações leva, em média, 4 minutos para corrigir uma redação. Se em uma determinada semana ele corrigiu 450 redações, o tempo que ele levou para corrigir essas redações foi de:',
+
+        'respostas': {'a': '20h', 'b': '30h', 'c': '45h', },
+
+        'resposta_certa': 'b',
+    },
+}
+print()
+resposta_certas = 0
+for pk, pv in perguntas.items():
+    print(f'{pk}: {pv["pergunta"]}')
+    print('respostas: ')
+
+    for rk, rv in pv['respostas'].items():
+
+        print(f'[{rk}]: {rv}')
+
+    resposta_usuario = input('Sua resposta: ')
+
+    print('-=-' * 15)
+
+    if resposta_usuario == pv['resposta_certa']:
+        print('EHHHHHHHH!!!!!ACERTOU!!!!!')
+        resposta_certas += 1
+        print()
+    else:
+
+        print('IXIIIII!!!! Você ERROU!!!!')
+        print()
+print()
+qtd_perguntas = len(perguntas)
+porcentagem_acerto = resposta_certas / qtd_perguntas * 100
+print(f'você acertou {resposta_certas} /10 das perguntas.')
+print(f'Sua porcentagem de acerto foi de {porcentagem_acerto}%.')
